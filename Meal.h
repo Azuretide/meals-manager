@@ -9,6 +9,7 @@ class Meal {
 
 	public:
 		Meal(MStatus s) : status(s) {}
-		void updateStatus(MStatus s) { status = s;}
+		void updateStatus(MStatus s) { status = s; }
+		MStatus getStatus() { return status; };
 		friend std::ostream &operator<<(std::ostream &os, const Meal &m);
 };

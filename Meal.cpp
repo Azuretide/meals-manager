@@ -8,7 +8,7 @@ std::ostream &operator<<(std::ostream &os, const Meal &m) {
 			os << "-";
 			break;
 		case SELECTED:
-			os << "y";
+			os << "o";
 			break;
 		case FORBIDDEN:
 			os << "X";

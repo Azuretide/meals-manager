@@ -1,6 +1,7 @@
 #include <iostream>
 #include <map>
 #include <vector>
+#include <string>
 #include "Manager.h"
 
 
@@ -27,7 +28,28 @@ int main() {
 	numMeals = cMapping[choice].substr(pos+1);
 	
 	Manager core = Manager(stoi(numMeals), any != "Basic");
-	std::cout << core;
+
+	std::cout << "Welcome to Meals Manager! Enter \"help\" for command details.\n";
+	std::string doc = "<day><meal> Schedules the entered meal or unschedules if"
+	 "meal is already selected. Enter day and meal as 1 character abbrevations "
+	 "as shown in the interface.\n"
+	 "q Exits the program.\n help Displays this help message.\n";
+	while (true) {
+		std::cout << std::endl << core;
+
+		std::string command;
+		std::cin >> command;
+		for (auto & c: command) c = toupper(c);
+		if (command == "Q") {
+			break;
+		} else if (command == "HELP") {
+			std::cout << doc;
+		} else if (command.length() == 2) {
+			core.selectMeal(command[0], command[1]);
+		} else {
+			std::cout << "Invalid command\n";
+		}
+	}
 
 	return 0;
 }
