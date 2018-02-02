@@ -1,4 +1,4 @@
-# include "Meal.h"
+#include "Meal.h"
 
 class Manager {
 	int numMeals;
@@ -11,5 +11,5 @@ class Manager {
 	public:
 		Manager(int n, bool any);
 		void selectMeal(char day, char mealType);
-		friend std::ostream &operator<<(std::ostream &os, const Manager &m);
-}
+		friend std::ostream &operator<<(std::ostream &os, const Manager &M);
+};
